@@ -1,46 +1,33 @@
 <h1 align="center">Yuta Sadamatsu</h1>
-<p align="center">
-  <img src="https://img.shields.io/badge/Software%20Engineer-%2300BFFF.svg?style=flat-square&logo=github&logoColor=white" alt="Software Engineer" />
-  <img src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS" />
-</p>
 
 <p align="center">
-  <b>成長し続けるエンジニア / Always learning, always evolving.</b>
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=00BFFF&center=true&vCenter=true&width=435&lines=Software+Engineer;Always+learning%2C+always+evolving.;Welcome+to+my+profile!" alt="Typing SVG" /></a>
 </p>
 
 ---
 
-### 🚀 About Me
-- 🔭 Webアプリ・AI開発に挑戦中
-- 🌱 TypeScript / Next.js / Python / AWS 学習中
-- 👯 オープンソースや技術ブログに興味あり
-- 💬 フロントエンド・バックエンド・クラウド何でもどうぞ
-- 📫 [メールで連絡](mailto:your.email@example.com)
-
----
-
-### 🛠️ Tech Stack
-
-<p>
-  <img src="https://img.shields.io/badge/React-%2361DAFB.svg?style=flat-square&logo=react&logoColor=black" />
-  <img src="https://img.shields.io/badge/Next.js-%23000000.svg?style=flat-square&logo=next.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Django-%23092E20.svg?style=flat-square&logo=django&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-%23F05032.svg?style=flat-square&logo=git&logoColor=white" />
+### 🛠️ Tech Stack & Tools
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ts,react,nextjs,python,django,go,aws,docker,git,figma&perline=5" />
 </p>
 
 ---
 
-### 📈 GitHub Stats
+### 📈 My GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Yuta-Sadamatsu&show_icons=true&theme=tokyonight" alt="stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuta-Sadamatsu&theme=tokyonight" alt="streak" />
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Yuta-Sadamatsu&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true" alt="GitHub Stats" />
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yuta-Sadamatsu&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+</p>
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuta-Sadamatsu&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+</p>
+<p align="center">
+  <img src="https://github.com/Yuta-Sadamatsu/Yuta-Sadamatsu/blob/output/github-contribution-grid-snake.svg" alt="contribution snake" />
 </p>
 
 ---
 
 <p align="center">
-  <b>Let's connect and create something amazing! 🚀</b>
+  <b>Let's create something amazing! 🚀</b>
+</p>
