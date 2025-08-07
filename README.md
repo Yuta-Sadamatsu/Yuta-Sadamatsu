@@ -6,13 +6,6 @@
 
 ---
 
-### 🛠️ Tech Stack & Tools
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=ts,react,nextjs,python,django,go,aws,docker,git,figma&perline=5" />
-</p>
-
----
-
 ### 📈 My GitHub Activity
 
 <p align="center">
@@ -23,6 +16,7 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuta-Sadamatsu&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </p>
 <p align="center">
+  <!-- GitHub Actionsを設定すると、ここにContribution Snakeが表示されます -->
   <img src="https://github.com/Yuta-Sadamatsu/Yuta-Sadamatsu/blob/output/github-contribution-grid-snake.svg" alt="contribution snake" />
 </p>
 
