@@ -16,8 +16,11 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuta-Sadamatsu&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </p>
 <p align="center">
-  <!-- GitHub Actionsを設定すると、ここにContribution Snakeが表示されます -->
-  <img src="https://github.com/Yuta-Sadamatsu/Yuta-Sadamatsu/blob/output/github-contribution-grid-snake.svg" alt="contribution snake" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/main/dist/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/main/dist/github-contribution-grid-snake.svg" />
+    <img alt="contribution snake" src="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/main/dist/github-contribution-grid-snake.svg" />
+  </picture>
 </p>
 
 ---
