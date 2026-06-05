@@ -3,7 +3,7 @@ name: Generate Snake
 on:
   schedule:
     - cron: "0 0 * * *" # 毎日JST午前9時に実行
-  workflow_dispatch:
+  workflow_dispatch: # 手動実行ボタンを出せるようにする
 
 jobs:
   build:
@@ -12,7 +12,10 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # 1. 最新の安定版（v4）でリポジトリを読み込む
+      - uses: actions/checkout@v4
+
+      # 2. 蛇のアニメーション画像を生成する
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -21,10 +24,12 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. 履歴を汚さないために「output」という専用の隠しブランチに保存する
       - name: Push to output branch
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "Generate Contribution Snake" || exit 0
-          git push
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
