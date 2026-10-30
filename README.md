@@ -19,12 +19,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/output/stats-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/output/stats-light.svg" />
-    <img height="165" alt="GitHub Stats" src="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/output/stats-light.svg" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/output/top-langs-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/output/top-langs-light.svg" />
-    <img height="165" alt="Top Languages" src="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/output/top-langs-light.svg" />
+    <img alt="GitHub Stats" src="https://raw.githubusercontent.com/Yuta-Sadamatsu/Yuta-Sadamatsu/output/stats-light.svg" />
   </picture>
 </p>
 
