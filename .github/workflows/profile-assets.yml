@@ -1,0 +1,108 @@
+# プロフィール README で使う画像（Stats / Top Languages / Streak / Snake）を生成し、
+# 履歴を汚さないよう専用の `output` ブランチへ保存する。
+# 公開 API への依存をなくし、レート制限や停止の影響を受けないようにしている。
+name: Update profile assets
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 毎日 JST 午前 9 時に実行
+  workflow_dispatch: # Actions タブから手動実行できるようにする
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/profile-assets.yml" # このファイルを変更したら再生成する
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+env:
+  OUTPUT_DIR: dist
+  STATS_OPTIONS: show_icons=true&hide_border=true&include_all_commits=true
+  LANGS_OPTIONS: layout=compact&hide_border=true
+  STREAK_OPTIONS: hide_border=true
+  DARK_THEME: tokyonight
+  LIGHT_THEME: default
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # --- GitHub Stats ---
+      - name: Generate stats card (dark)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&${{ env.STATS_OPTIONS }}&theme=${{ env.DARK_THEME }}
+          path: ${{ env.OUTPUT_DIR }}/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate stats card (light)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&${{ env.STATS_OPTIONS }}&theme=${{ env.LIGHT_THEME }}
+          path: ${{ env.OUTPUT_DIR }}/stats-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      # --- Top Languages ---
+      - name: Generate top languages card (dark)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&${{ env.LANGS_OPTIONS }}&theme=${{ env.DARK_THEME }}
+          path: ${{ env.OUTPUT_DIR }}/top-langs-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate top languages card (light)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&${{ env.LANGS_OPTIONS }}&theme=${{ env.LIGHT_THEME }}
+          path: ${{ env.OUTPUT_DIR }}/top-langs-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      # --- Streak ---
+      - name: Generate streak card (dark)
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: user=${{ github.repository_owner }}&${{ env.STREAK_OPTIONS }}&theme=${{ env.DARK_THEME }}
+          path: ${{ env.OUTPUT_DIR }}/streak-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate streak card (light)
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: user=${{ github.repository_owner }}&${{ env.STREAK_OPTIONS }}&theme=${{ env.LIGHT_THEME }}
+          path: ${{ env.OUTPUT_DIR }}/streak-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --- Contribution Snake ---
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            ${{ env.OUTPUT_DIR }}/github-contribution-grid-snake.svg
+            ${{ env.OUTPUT_DIR }}/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # --- Publish ---
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: ${{ env.OUTPUT_DIR }}
+          commit_message: "chore: update profile assets"
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
